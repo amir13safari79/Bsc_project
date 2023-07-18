@@ -8,7 +8,7 @@ class RuleBase:
         self.performance_table = get_performance_table(number_of_partitions)
 
         if train:
-            self.rules = get_performance_table(number_of_partitions)
+            self.rules = np.random.randint(low=-10, high=10, size=(number_of_partitions + 1, number_of_partitions)).astype("float")
         else:
             self.rules = trained_rule_base
 

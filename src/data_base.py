@@ -13,6 +13,12 @@ class DataBase:
 
     def get_rule_and_membership(self, x: int):
         rule_membership = {}
+        if x < self.universe_discourse_start:
+            x = self.universe_discourse_start
+
+        if x > self.universe_discourse_end:
+            x = self.universe_discourse_end
+
         if x < self.universe_discourse_start or x > self.universe_discourse_end:
             raise ValueError(f"x = {x}, x should be between discourse_start = {self.universe_discourse_start} and discourse_end = {self.universe_discourse_end}")
 
